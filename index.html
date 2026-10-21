@@ -4,19 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>flambéed yak</title>
-  <link rel="preload" href="assets/fonts/mrs-eaves-roman.woff2" as="font" type="font/woff2" crossorigin>
   <style>
-    @font-face {
-      font-family: "Mrs Eaves";
-      src: url("assets/fonts/mrs-eaves-roman.woff2") format("woff2");
-      font-weight: 400;
-      font-style: normal;
-      font-display: swap;
-    }
-
     :root {
       --bg: #0a1530;
       --fg: #f2ede3;
+      --muted: #8a93ab;
     }
 
     * { box-sizing: border-box; }
@@ -33,27 +25,54 @@
       flex-direction: column;
       align-items: center;
       min-height: 100vh;
-      padding: 12vh 16px 16px;
-      font-family: "Mrs Eaves", Georgia, "Times New Roman", serif;
+      padding: 12vh 16px 2rem;
+      font-family: "mrs-eaves", "Mrs Eaves", Georgia, "Times New Roman", serif;
       text-align: center;
     }
 
+    h1 { margin: 0; }
+
     .logo {
-      width: min(320px, 70vw);
+      display: block;
+      width: min(360px, 80vw);
       height: auto;
     }
 
-    h1 {
-      margin: 2.5rem 0 0;
-      font-size: clamp(2.5rem, 8vw, 4.5rem);
-      font-weight: 400;
-      letter-spacing: 0.02em;
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      clip-path: inset(50%);
+      white-space: nowrap;
     }
+
+    footer {
+      margin-top: auto;
+      padding-top: 4rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+
+    footer p { margin: 0; }
+
+    footer a {
+      color: inherit;
+      text-underline-offset: 0.15em;
+    }
+
+    footer a:hover { color: var(--fg); }
   </style>
 </head>
 <body>
-  <img class="logo" src="assets/logo.svg" alt="flambéed yak logo">
-  <h1>flambéed yak</h1>
+  <h1>
+    <img class="logo" src="assets/logo.svg" alt="" width="304" height="147">
+    <span class="visually-hidden">flambéed yak</span>
+  </h1>
+  <footer>
+    <p>Drew Robinson <a href="https://github.com/ocean">@ocean</a> 2026</p>
+  </footer>
   <a href="http://nymisoa.com/php/secondinvidious.php?topic_id=4675"><!-- crossgrained --></a>
 </body>
 </html>
